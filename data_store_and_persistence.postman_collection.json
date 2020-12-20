@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "e5025c1a-abb1-40f5-9fdc-97c650436baf",
+		"name": "data_store_and_persistence",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "scheduleDelivery",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"name\": \"Yuheng\",\n \"address\": \"1234 Sesame Blvd\",\n \"completed\": true,\n \"deliveryTime\": \"2020-03-07T18:07\",\n \"plants\": [\n     {\"name\": \"Banana\",\n     \"price\": \"2.01\"},\n     {\"name\": \"Tulip\",\n     \"price\": \"2.50\"}\n ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/delivery",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBill",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/delivery/bill/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delivery",
+						"bill",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDeliveryOrderByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/delivery/order/Yuheng",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delivery",
+						"order",
+						"Yuheng"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUnderPricePlant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/plant/under-price/3.5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"plant",
+						"under-price",
+						"3.5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "isPlantDelivered",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/plant/delivered/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"plant",
+						"delivered",
+						"17"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
